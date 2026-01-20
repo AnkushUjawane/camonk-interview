@@ -1,5 +1,47 @@
 import type { Blog } from "@/types/blogData";
 
-interface BlogDetailProps{
+interface BlogDetailProps {
     blog: Blog | null
+}
+
+export const Blog_Detail = ({ blog }: BlogDetailProps) => {
+    if (!blog) {
+        return (
+            <div>
+                Select a blog to read
+            </div>
+        )
+    }
+
+    return (
+        <div className="space-y-6">
+            <div className="overflow-hidden rounded-xl border border-white/20">
+                <img
+                    src={blog.coverImage}
+                    alt={blog.title}
+                    className="h-64 w-full object-cover"
+                />
+            </div>
+            <div className="flex items-center justify-between text-sm text-white/60">
+                <span className="text-red-400">{blog.category}</span>
+                <span>{new Date(blog.createdAt).toDateString()}</span>
+            </div>
+            <h1 className="text-3xl font-bold text-sky-400">
+                {blog.title}
+            </h1>
+            <p className="leading-relaxed text-white/80 whitespace-pre-line">
+                {blog.content}
+            </p>
+            <div className="flex flex-wrap gap-2">
+                {blog.tags.map((tag) => (
+                    <span
+                        key={tag}
+                        className="rounded-full border border-white/20 px-3 py-1 text-xs text-yellow-400"
+                    >
+                        #{tag}
+                    </span>
+                ))}
+            </div>
+        </div>
+    )
 }
