@@ -10,7 +10,7 @@ export const Blog_List = ({onSelectBlog}: BlogListProps) => {
     if(isLoading) return <p>Loading...</p>
     if(error) return <p>Failed to load Blogs, We will reach you soon</p>
     return(
-        <div>
+        <div className="space-y-4">
             {data?.map((blog) => (
                 <Blog_Card
                     key={blog.id}

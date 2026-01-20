@@ -11,6 +11,9 @@ export default function Blogs(){
   const selectedBlog: Blog | null = data?.find((b) => b.id === selectedBlogId) ?? null
   return (
     <div className="min-h-screen bg-black p-6">
+      <h1 className="mb-5 text-4xl font-bold text-sky-400 text-center">
+          CA Monk Blogs
+        </h1>
       <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-1 rounded-xl border border-white/30 p-4">
           <Blog_List onSelectBlog={setSelectedBlogId} />

@@ -5,5 +5,5 @@ export interface Blog {
   content: string
   category: string[]
   coverImage: string
-  createdAt: string
+  date: string
 }

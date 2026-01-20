@@ -7,8 +7,8 @@ interface BlogDetailProps {
 export const Blog_Detail = ({ blog }: BlogDetailProps) => {
     if (!blog) {
         return (
-            <div>
-                Select a blog to read
+            <div className="rounded-lg border border-dashed border-white/20 p-10 text-center text-white/50">
+                Select a blog to read ✨
             </div>
         )
     }
@@ -24,7 +24,7 @@ export const Blog_Detail = ({ blog }: BlogDetailProps) => {
             </div>
             <div className="flex items-center justify-between text-sm text-white/60">
                 <span className="text-red-400">{blog.category}</span>
-                <span>{new Date(blog.createdAt).toDateString()}</span>
+                <span>{new Date(blog.date).toDateString()}</span>
             </div>
             <h1 className="text-3xl font-bold text-sky-400">
                 {blog.title}
