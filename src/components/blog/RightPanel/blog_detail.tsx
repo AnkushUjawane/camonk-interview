@@ -33,12 +33,12 @@ export const Blog_Detail = ({ blog }: BlogDetailProps) => {
                 {blog.content}
             </p>
             <div className="flex flex-wrap gap-2">
-                {blog.tags.map((tag) => (
+                {blog.category.map((category) => (
                     <span
-                        key={tag}
+                        key={category}
                         className="rounded-full border border-white/20 px-3 py-1 text-xs text-yellow-400"
                     >
-                        #{tag}
+                        #{category}
                     </span>
                 ))}
             </div>

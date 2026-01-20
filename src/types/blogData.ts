@@ -3,8 +3,7 @@ export interface Blog {
   title: string
   description: string
   content: string
-  category: string
-  tags: string[]
+  category: string[]
   coverImage: string
   createdAt: string
 }
