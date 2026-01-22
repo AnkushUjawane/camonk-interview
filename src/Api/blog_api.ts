@@ -16,3 +16,21 @@ export const getBlogsByID = async (id: string): Promise<Blog> => {
     }
     return response.json()
 }
+
+export const createBlog = async (
+  blog: Omit<Blog, "id">
+): Promise<Blog> => {
+  const res = await fetch(Base_Url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(blog),
+  })
+
+  if (!res.ok) {
+    throw new Error("Failed to create blog")
+  }
+
+  return res.json()
+}

@@ -1,11 +1,5 @@
-import Blogs from "./pages/blogs";
+import AppRoutes from "@/Routes/AppRoutes"
 
-function App(){
-  return(
-    <div>
-      <Blogs />
-    </div>
-  )
+export default function App() {
+  return <AppRoutes />
 }
-
-export default App

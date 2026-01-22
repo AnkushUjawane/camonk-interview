@@ -1,22 +1,22 @@
 import type { Blog } from "@/types/blogData";
-interface BlogCardProps{
+interface BlogCardProps {
     blog: Blog
     onSelect: (id: string) => void
 }
 
-export const Blog_Card = ({blog, onSelect}: BlogCardProps) => {
-    return(
-        <div onClick={() => onSelect(blog.id)} 
-        className="
+export const Blog_Card = ({ blog, onSelect }: BlogCardProps) => {
+    return (
+        <div onClick={() => onSelect(blog.id)}
+            className="
             cursor-pointer
-            rounded-xl
-            border border-white/20
             bg-white/5
             m-2
             p-4
             transition
             hover:border-white/40
             hover:bg-white/10
+
+            border border-white/25 bg-gradient-to-br from-white/10 to-white/2 shadow-[0_0_20px_rgba(0,180,255,0.10),inset_0_0_10px_rgba(255,255,255,0.08)] backdrop-blur-md rounded-xl w-80 h-40
             "
         >
             <div className="flex items-center justify-between text-xs text-white/60">
@@ -24,7 +24,11 @@ export const Blog_Card = ({blog, onSelect}: BlogCardProps) => {
                     {blog.category}
                 </span>
                 <span>
-                    {new Date(blog.date).toDateString()}
+                    {new Date(blog.date).toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                    })}
                 </span>
             </div>
             <div>

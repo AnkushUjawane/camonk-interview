@@ -33,7 +33,7 @@ export const Blog_Detail = ({ blog }: BlogDetailProps) => {
                 {blog.content}
             </p>
             <div className="flex flex-wrap gap-2">
-                {blog.category.map((category) => (
+                {blog.category?.map((category) => (
                     <span
                         key={category}
                         className="rounded-full border border-white/20 px-3 py-1 text-xs text-yellow-400"
